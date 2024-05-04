@@ -22,7 +22,7 @@ export const Contact = () => {
           <Link href="https://www.linkedin.com/in/adlergabriel" target="blank">
             Linkedin
           </Link>
-          <Link href="https://twitter.com/a_gabriel20" target="blank">
+          <Link href="https://www.instagram.com/adler__gabriel/" target="blank">
             Instagram
           </Link>
           <Link href="https://www.behance.net/estudioadler" target="blank">
