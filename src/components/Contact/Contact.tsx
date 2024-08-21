@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Formulario } from "../Formulario/Formulario";
+import Formulario from "../Formulario/Formulario";
 export const Contact = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-between py-8 md:py-20 px-4 md:px-8 container mx-auto">

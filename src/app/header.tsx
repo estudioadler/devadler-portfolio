@@ -11,7 +11,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { MultiLanguage } from "@/components/MultiLanguage/MultiLanguage";
 
 export const Header = () => {
   const menuItems = [
@@ -42,8 +41,6 @@ export const Header = () => {
       </Link>
 
       <div className="flex items-center gap-4">
-        {/* botao de idioma */ }
-        <MultiLanguage />
         {/* botão de contato */}
         <div className="md:flex gap-2 items-center hidden">
           <Link
@@ -52,10 +49,9 @@ export const Header = () => {
           >
             <ButtonCta
               iconLeft={<ArrowRight01Icon size={24} strokeWidth={1} />}
-              text="Vamos conversar"
               variant={"black"}
               type={"button"}
-            />
+            >Vamos conversar</ButtonCta>
           </Link>
         </div>
 

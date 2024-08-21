@@ -6,6 +6,7 @@ import { Header } from "./header";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/ScrollToTop/ScrollToTop";
+import { Toaster } from "../components/ui/sonner";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -78,6 +79,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <Toaster theme="dark" richColors />
         <Footer />
         <ScrollToTop />
       </body>
