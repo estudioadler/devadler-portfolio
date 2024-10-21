@@ -25,15 +25,15 @@ export const Header = () => {
     <header className="flex justify-between items-center w-full h-20 md:h-32 pt-4 md:pt-0 px-4 md:px-8 container mx-auto">
       {/* logotipo */}
       <Link href={"/"} className="flex items-center gap-3">
-        <Avatar>
+        <Avatar className="shadow-sm border">
           <AvatarImage src="https://github.com/estudioadler.png" />
           <AvatarFallback>A</AvatarFallback>
         </Avatar>
-        <div className="flex flex-col text-neutral-900">
+        <div className="flex flex-col -space-y-0.5 text-neutral-900">
           <span className="">Adler Gabriel</span>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-xs text-neutral-500 uppercase">
+            <span className="text-[0.625rem] text-neutral-500 uppercase">
               Disponível.
             </span>
           </div>

@@ -1,6 +1,6 @@
 import { Contact } from "@/components/Contact/Contact";
 import { ListProjects } from "@/components/ListProjects/ListProjects";
-import { TitleSection } from "@/components/TitleSection/TitleSection";
+
 
 export const metadata = {
   title: "Projetos - Adler Gabriel",
@@ -10,7 +10,7 @@ export const metadata = {
 export default function ProjectPage() {
   return (
     <>
-      <div className="flex flex-col gap-6 py-14 px-4 md:px-8 container mx-auto">
+      <div className="flex flex-col gap-6 py-10 px-4 md:px-8 container mx-auto">
         <h1 className="text-4xl md:text-6xl uppercase font-neue font-medium">
           Projetos
         </h1>
@@ -23,7 +23,6 @@ export default function ProjectPage() {
         </p>
       </div>
       <ListProjects />
-      <TitleSection title="Contato" />
       <Contact />
     </>
   );

@@ -7,6 +7,11 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/ScrollToTop/ScrollToTop";
 import { Toaster } from "../components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider"
+import Link from "next/link";
+import { ButtonCta } from "@/components/ButtonCta/ButtonCta";
+import { ArrowRight01Icon } from "hugeicons-react";
+import Template from "./template";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -63,11 +68,10 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="pt-br"
       suppressHydrationWarning
-      className=" scroll-smooth antialiased scrollbar selection:bg-neutral-900 selection:text-neutral-50"
+      className="scroll-smooth antialiased scrollbar selection:bg-neutral-900 selection:text-neutral-50"
     >
-      {/* <Preloader /> */}
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -75,13 +79,27 @@ export default function RootLayout({
           neueMachina.variable
         )}
       >
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Toaster theme="dark" richColors />
-        <Footer />
-        <ScrollToTop />
+        <Template>
+          <Header />
+          <main>{children}</main>
+          <Toaster theme="dark" richColors />
+          <Footer />
+          <div className="fixed bottom-4 right-4 md:hidden">
+            <Link
+              href="https://api.whatsapp.com/send?phone=5531982688382"
+              target="blank"
+            >
+              <ButtonCta
+                iconLeft={<ArrowRight01Icon size={24} strokeWidth={1} />}
+                variant={"black"}
+                type={"button"}
+              >
+                Vamos conversar
+              </ButtonCta>
+            </Link>
+          </div>
+          <ScrollToTop />
+        </Template>
       </body>
     </html>
   );

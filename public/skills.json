@@ -24,10 +24,10 @@
   },
   "design": {
     "tools": [
-      {"name": "Adobe Photoshop", "icon": "../logoSkills/photoshop.svg", "size": 24},
+      {"name": "Photoshop", "icon": "../logoSkills/photoshop.svg", "size": 24},
       {"name": "Adobe XD", "icon": "../logoSkills/adobeXd.svg", "size": 24},
       {"name": "Figma", "icon": "../logoSkills/figma.svg", "size": 24},
-      {"name": "Adobe Illustrator", "icon": "../logoSkills/illustrator.svg", "size": 24}
+      {"name": "Illustrator", "icon": "../logoSkills/illustrator.svg", "size": 24}
     ]
   },
   "backEnd": {

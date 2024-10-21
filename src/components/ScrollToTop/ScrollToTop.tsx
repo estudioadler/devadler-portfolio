@@ -26,7 +26,7 @@ export const ScrollToTop = () => {
     <>
     {
       isVisible && (
-        <div onClick={() => handleScrollToTop()} className="cursor-pointer fixed bottom-8 right-8 text-neutral-900 outline outline-1 outline-neutral-300 hover:outline-neutral-400 p-5 rounded-full">
+        <div onClick={() => handleScrollToTop()} className="cursor-pointer fixed bottom-4 right-52 md:bottom-4 md:right-8 text-neutral-900 outline outline-1 outline-neutral-300 hover:outline-neutral-400 p-3.5 md:p-5 rounded-full">
           <ArrowUp01Icon className="size-4" />
         </div>
       )
