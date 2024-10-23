@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import Link from "next/link";
 import Image from "next/image";
 import { TitleSection } from "../TitleSection/TitleSection";
+import { Links } from "../Links/Links";
 
 export const ListProjects = () => {
   const projects = [
@@ -38,11 +39,9 @@ export const ListProjects = () => {
 
   return (
     <>
-    <div className="p-4 md:p-8">
       <TitleSection>
         Projetos
       </TitleSection>
-    </div>
     <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-8 container mx-auto">
       {projects.map((project, index) => (
         <Card
@@ -66,22 +65,8 @@ export const ListProjects = () => {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <Link
-                href={project.url}
-                target="_blank"
-                className="flex items-center text-xs text-muted-foreground hover:text-primary"
-              >
-                Ver Projeto
-                <ArrowUpRight strokeWidth={1} className="ml-1 w-4 h-4 text-muted-foreground" />
-              </Link>
-              <Link
-                href={project.url}
-                target="_blank"
-                className="flex items-center text-xs text-muted-foreground hover:text-primary"
-              >
-                Ver Código
-                <ArrowUpRight strokeWidth={1} className="ml-1 w-4 h-4 text-muted-foreground" />
-              </Link>
+              <Links text="Projeto" url={project.url} />
+              <Links text="Código" url={project.url} />
             </div>
           </CardContent>
         </Card>

@@ -1,6 +1,5 @@
 
-import { ArrowUp01Icon, CopyrightIcon } from "hugeicons-react";
-import Link from "next/link";
+import { CopyrightIcon } from "hugeicons-react";
 
 export const Footer = () => {
   // Obtém a data atual

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Formulario from "../Formulario/Formulario";
-import { TitleSection } from "../TitleSection/TitleSection";
-import { ArrowUp01, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Links } from "../Links/Links";
 export const Contact = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-between py-10 md:py-20 px-4 md:px-8 container mx-auto">
@@ -18,22 +18,10 @@ export const Contact = () => {
         </p>
         {/*social links*/}
         <div className="flex-col flex md:flex-row gap-4">
-          <Link className="flex items-center" href="https://github.com/estudioadler" target="blank">
-            Github
-            <ArrowUpRight strokeWidth={1} className="size-5"  />
-          </Link>
-          <Link className="flex items-center" href="https://www.linkedin.com/in/adlergabriel" target="blank">
-            Linkedin
-            <ArrowUpRight strokeWidth={1} className="size-5" />
-          </Link>
-          <Link className="flex items-center" href="https://www.instagram.com/adler__gabriel/" target="blank">
-            Instagram
-            <ArrowUpRight strokeWidth={1} className="size-5" />
-          </Link>
-          <Link className="flex items-center" href="https://www.behance.net/estudioadler" target="blank">
-            Behance
-            <ArrowUpRight strokeWidth={1} className="size-5" />
-          </Link>
+          <Links text="Github" url="https://github.com/estudioadler" />
+          <Links text="Linkedin" url="https://www.linkedin.com/in/adlergabriel" />
+          <Links text="Instagram" url="https://www.instagram.com/adler__gabriel/" />
+          <Links text="Behance" url="https://www.behance.net/estudioadler" />
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MyTechs } from "../MyTechs/MyTechs";
+import { Button } from "../ui/button";
 
 export const Hero = () => {
   const techs = [
@@ -24,11 +25,13 @@ export const Hero = () => {
           <span className="font-bold">Desenvolvimento Front-end</span>. Tenho me
           dedicado aos estudos e buscando aprimorar minhas {". . "}
           <Link href={"/about"} className="underline underline-offset-4">
-            ler mais
+            <Button variant={"link"} className="py-0">
+              ler mais
+            </Button>
           </Link>
         </p>
         <div className="flex items-center md:justify-center flex-wrap gap-2 text-sm">
-          {techs.map((tech) => (
+          {techs.map((tech) =>
             tech === "+ mais" ? (
               <Link href={"/skills"} key="mais">
                 <MyTechs name={tech} />
@@ -36,7 +39,7 @@ export const Hero = () => {
             ) : (
               <MyTechs key={tech} name={tech} />
             )
-          ))}
+          )}
         </div>
       </div>
     </section>

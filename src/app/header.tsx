@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Links } from "@/components/Links/Links";
 
 export const Header = () => {
   const menuItems = [
@@ -31,8 +32,8 @@ export const Header = () => {
         </Avatar>
         <div className="flex flex-col -space-y-0.5 text-neutral-900">
           <span className="">Adler Gabriel</span>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="flex items-center gap-1">
+            <div className="size-1.5 bg-green-500 rounded-full"></div>
             <span className="text-[0.625rem] text-neutral-500 uppercase">
               Disponível.
             </span>
@@ -93,25 +94,11 @@ export const Header = () => {
                     Redes sociais
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Link href="https://github.com/estudioadler" target="blank">
-                    Github
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/in/adlergabriel"
-                    target="blank"
-                  >
-                    Linkedin
-                  </Link>
-                  <Link href="https://twitter.com/a_gabriel20" target="blank">
-                    Instagram
-                  </Link>
-                  <Link
-                    href="https://www.behance.net/estudioadler"
-                    target="blank"
-                  >
-                    Behance
-                  </Link>
+                <div className="flex flex-col gap-4">
+                  <Links text="Github" url="https://github.com/estudioadler" />
+                  <Links text="Linkedin" url="https://www.linkedin.com/in/adlergabriel" />
+                  <Links text="Instagram" url="https://www.instagram.com/adler__gabriel/" />
+                  <Links text="Behance" url="https://www.behance.net/estudioadler" />
                 </div>
               </div>
             </div>
