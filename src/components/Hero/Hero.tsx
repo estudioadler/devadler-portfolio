@@ -1,17 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { ButtonCta } from "../ButtonCta/ButtonCta";
 
 export const Hero = () => {
-  const techs = [
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "Next.js",
-    "tailwindcss",
-    "+ mais",
-  ];
-
   return (
     <section className="flex flex-col py-24 md:py-40 px-4 md:px-36 container mx-auto">
       <div className="flex flex-col gap-6 max-w-2xl">

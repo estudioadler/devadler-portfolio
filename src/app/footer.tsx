@@ -1,8 +1,5 @@
 "use client"
 import Link from "next/link"
-import { Circle } from 'lucide-react'
-import Image from "next/image";
-
 export const Footer = () => {
   // Obtém a data atual
   const currentDate = new Date();

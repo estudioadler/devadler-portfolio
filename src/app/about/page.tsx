@@ -1,5 +1,4 @@
 import { Contact } from "@/components/Contact/Contact";
-import { TitleSection } from "@/components/TitleSection/TitleSection";
 import Link from "next/link";
 
 export default function AboutPage() {

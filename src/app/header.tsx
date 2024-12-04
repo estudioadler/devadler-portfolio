@@ -2,9 +2,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ButtonCta } from "../components/ButtonCta/ButtonCta";
-
-import { ArrowRight01Icon } from "hugeicons-react";
 
 import {
   Sheet,
@@ -12,9 +9,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Links } from "@/components/Links/Links";
-import { ArrowRight, AtSign, Languages } from "lucide-react";
+
+import { AtSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Header = () => {

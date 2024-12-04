@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button";
 
 interface ILinkprops {
   icon?: React.ReactNode;
