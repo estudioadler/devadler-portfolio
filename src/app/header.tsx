@@ -78,7 +78,7 @@ export const Header = () => {
                   <li key={index}>
                     <Link href={item.link}>
                       <SheetClose className="flex gap-2">
-                        <span className="text-3xl uppercase font-neue hover:italic">
+                        <span className="text-4xl uppercase font-neue hover:italic">
                           {item.label}
                         </span>
                       </SheetClose>

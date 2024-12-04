@@ -131,7 +131,7 @@ export const Contact = () => {
             </CardContent>
             <CardFooter className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="space-y-1">
-                <p className="text-sm text-neutral-400">Hate contact forms?</p>
+                <p className="text-sm text-neutral-400">Não curte formulários?</p>
                 <a
                   href="mailto:hello@significa.co"
                   className="text-sm hover:underline"

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/ScrollToTop/ScrollToTop";
 import { Toaster } from "../components/ui/sonner";
 import Template from "./template";
+import { Preloader } from "@/components/Preloader/Preloader";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -76,6 +77,7 @@ export default function RootLayout({
         )}
       >
         <Template>
+          <Preloader />
           <Header />
           <main>{children}</main>
           <Toaster />
