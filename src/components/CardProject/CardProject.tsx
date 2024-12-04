@@ -63,7 +63,6 @@ export const CardProject = (props: ICardProject) => {
         <CardContent className="p-0">
           <Carousel
             className="w-full"
-            onSelect={(index: number) => setCurrent(index)}
           >
             <CarouselContent>
               {props.imgUrl.map((src, index) => (
