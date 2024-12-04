@@ -1,5 +1,7 @@
+// Updated Header component with fixed text positioning
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ButtonCta } from "../components/ButtonCta/ButtonCta";
 
 import { ArrowRight01Icon } from "hugeicons-react";
@@ -12,74 +14,75 @@ import {
 } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Links } from "@/components/Links/Links";
+import { ArrowRight, AtSign, Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Header = () => {
+  const pathname = usePathname();
+
   const menuItems = [
-    { label: "Home", link: "/" },
-    { label: "About", link: "/about" },
-    { label: "Projects", link: "/projects" },
+    { label: "Sobre mim", link: "/about" },
+    { label: "Projetos", link: "/projects" },
     { label: "Skills", link: "/skills" },
-    { label: "Contact", link: "/contact" },
+    { label: "Contato", link: "/contact" },
   ];
 
   return (
-    <header className="flex justify-between items-center w-full h-20 md:h-32 pt-4 md:pt-0 px-4 md:px-8 container mx-auto">
+    <header className="flex justify-between items-center w-full h-16 md:h-24 px-4 md:px-16 container mx-auto">
       {/* logotipo */}
-      <Link href={"/"} className="flex items-center gap-3">
-        <Avatar className="shadow-sm border">
-          <AvatarImage src="https://github.com/estudioadler.png" />
-          <AvatarFallback>A</AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col -space-y-0.5 text-neutral-900">
-          <span className="">Adler Gabriel</span>
-          <div className="flex items-center gap-1">
-            <div className="size-1.5 bg-green-500 rounded-full"></div>
-            <span className="text-[0.625rem] text-neutral-500 uppercase">
-              Disponível.
-            </span>
-          </div>
-        </div>
-      </Link>
+      <div className="flex items-center justify-between w-full">
+        <Link href={"/"} className="flex items-center gap-1">
+          <AtSign size={14} />
+          devadler
+        </Link>
+        <nav>
+          <ul className="items-center gap-4 md:gap-8 hidden md:flex">
+            {menuItems.map((menuItem) => (
+              <li key={menuItem.label} className="relative">
+                <Link
+                  href={menuItem.link}
+                  className="group relative text-sm flex flex-col items-center"
+                >
+                  <span className="relative inline-flex overflow-hidden h-5">
+                    <div className="translate-y-0 skew-y-0 transition duration-300 group-hover:-translate-y-[110%] group-hover:skew-y-12">
+                      {menuItem.label}
+                    </div>
+                    <div className="absolute translate-y-[110%] skew-y-12 transition duration-300 group-hover:translate-y-0 group-hover:skew-y-0">
+                      {menuItem.label}
+                    </div>
+                  </span>
+                  {pathname === menuItem.link && (
+                    <span className="absolute -bottom-2 w-1 h-1 bg-current rounded-full" />
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
 
       <div className="flex items-center gap-4">
-        {/* botão de contato */}
-        <div className="md:flex gap-2 items-center hidden">
-          <Link
-            href="https://api.whatsapp.com/send?phone=5531982688382"
-            target="blank"
-          >
-            <ButtonCta
-              iconLeft={<ArrowRight01Icon size={24} strokeWidth={1} />}
-              variant={"black"}
-              type={"button"}
-            >Vamos conversar</ButtonCta>
-          </Link>
-        </div>
-
         {/* menu mobile */}
         <Sheet>
-          <SheetTrigger>
-            <div className=" bg-neutral-50 hover:bg-neutral-100 rounded-full p-5 grid grid-cols-2 gap-1 hover:transform hover:-rotate-90 transition ease-in-out duration-300">
-              <span className="w-1 h-1 bg-neutral-900 rounded-full"></span>
-              <span className="w-1 h-1 bg-neutral-900 rounded-full"></span>
-              <span className="w-1 h-1 bg-neutral-900 rounded-full"></span>
-              <span className="w-1 h-1 bg-neutral-900 rounded-full"></span>
-            </div>
+          <SheetTrigger asChild>
+            <Button
+              variant="link"
+              className="underline-none md:hidden px-0 flex items-center uppercase text-xs"
+            >
+              <span className="sr-only">Abrir menu</span>
+              <span className="w-1 h-1 bg-primary rounded-full" />
+              Menu
+            </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-neutral-900">
-            <div className="flex flex-col items-start gap-12 py-12 px-4">
-              <div className="w-full border-b border-neutral-700 pb-4">
-                <span className=" text-[0.625rem] text-neutral-400 uppercase">
-                  navegação
-                </span>
-              </div>
+          <SheetContent side="right">
+            <div className="flex flex-col items-start justify-between gap-12 pb-8 pt-16">
               {/* links do menu */}
               <ul className="flex flex-col gap-4">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link href={item.link}>
                       <SheetClose className="flex gap-2">
-                        <span className="text-5xl text-neutral-100 uppercase font-neue">
+                        <span className="text-3xl uppercase font-neue hover:italic">
                           {item.label}
                         </span>
                       </SheetClose>
@@ -88,17 +91,28 @@ export const Header = () => {
                 ))}
               </ul>
               {/*  */}
-              <div className="w-full flex flex-col justify-between gap-8 text-neutral-100">
-                <div className="w-full border-b border-neutral-700 pb-4">
-                  <span className=" text-[0.625rem] text-neutral-400 uppercase">
-                    Redes sociais
-                  </span>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Links text="Github" url="https://github.com/estudioadler" />
-                  <Links text="Linkedin" url="https://www.linkedin.com/in/adlergabriel" />
-                  <Links text="Instagram" url="https://www.instagram.com/adler__gabriel/" />
-                  <Links text="Behance" url="https://www.behance.net/estudioadler" />
+              <div className="w-full flex flex-col gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Redes Sociais
+                  </h3>
+                  <nav className="flex flex-col space-y-3">
+                    <Link className="text-sm hover:underline" href="#">
+                      Instagram
+                    </Link>
+                    <Link className="text-sm hover:underline" href="#">
+                      Dribbble
+                    </Link>
+                    <Link className="text-sm hover:underline" href="#">
+                      LinkedIn
+                    </Link>
+                    <Link className="text-sm hover:underline" href="#">
+                      Behance
+                    </Link>
+                    <Link className="text-sm hover:underline" href="#">
+                      Github
+                    </Link>
+                  </nav>
                 </div>
               </div>
             </div>

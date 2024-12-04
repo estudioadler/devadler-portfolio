@@ -6,13 +6,24 @@
       {"name": "HTML", "icon": "../logoSkills/html5.svg", "size": 24},
       {"name": "JavaScript", "icon": "../logoSkills/javascript.svg", "size": 24},
       {"name": "NextJS", "icon": "../logoSkills/nextjs.svg", "size": 24},
-      {"name": "Radix", "icon": "../logoSkills/radix-ui.svg", "size": 24},
+      {"name": "ShadnUi", "icon": "../logoSkills/shadcn.svg", "size": 24},
       {"name": "React", "icon": "../logoSkills/reactjs.svg", "size": 24},
       {"name": "Sass", "icon": "../logoSkills/sass.svg", "size": 24},
-      {"name": "Styled Components", "icon": "../logoSkills/styled.svg", "size": 24},
       {"name": "TailwindCSS", "icon": "../logoSkills/tailwind.svg", "size": 24},
       {"name": "Typescript", "icon": "../logoSkills/typescript.svg", "size": 24},
-      {"name": "Vite", "icon": "../logoSkills/vite.svg", "size": 24}
+      {"name": "Vite", "icon": "../logoSkills/vite.svg", "size": 24},
+      {"name": "Less", "icon": "../logoSkills/less.svg", "size": 24} ,
+      {"name": "Bootstrap", "icon": "../logoSkills/bootstrap.svg", "size": 24},
+      {"name": "Material-UI", "icon": "../logoSkills/mui.svg", "size": 24},
+      {"name": "Styled Components", "icon": "../logoSkills/styled.svg", "size": 24},
+      {"name": "Zod", "icon": "../logoSkills/zod.svg", "size": 24}
+    ]
+  },
+  "backEnd": {
+    "frameworks": [
+      {"name": "NodeJS", "icon": "../logoSkills/node.svg", "size": 24},
+      {"name": "Prisma", "icon": "../logoSkills/prisma.svg", "size": 24},
+      {"name": "TypeScript", "icon": "../logoSkills/typescript.svg", "size": 24}
     ]
   },
   "tests": {
@@ -30,16 +41,15 @@
       {"name": "Illustrator", "icon": "../logoSkills/illustrator.svg", "size": 24}
     ]
   },
-  "backEnd": {
-    "frameworks": [
-      {"name": "Express", "icon": "../logoSkills/express.svg", "size": 24},
-      {"name": "JavaScript", "icon": "../logoSkills/javascript.svg", "size": 24},
-      {"name": "Node", "icon": "../logoSkills/node.svg", "size": 24},
-      {"name": "Typescript", "icon": "../logoSkills/typescript.svg", "size": 24}
-    ]
-  },
+  "tools": [
+    {"name": "NPM", "icon": "../logoSkills/npm.svg", "size": 24},
+    {"name": "Yarn", "icon": "../logoSkills/yarn.svg", "size": 24},
+    {"name": "Webpack", "icon": "../logoSkills/webpack.svg", "size": 24}
+  ],
   "databases": [
-    {"name": "MySQL", "icon": "../logoSkills/mysql.svg", "size": 24}
+    {"name": "MySQL", "icon": "../logoSkills/mysql.svg", "size": 24},
+    {"name": "PostgreSQL", "icon": "../logoSkills/postgresql.svg", "size": 24},
+    {"name": "MongoDB", "icon": "../logoSkills/mongodb.svg", "size": 24}
   ],
   "infrastructure": {
     "providers": [

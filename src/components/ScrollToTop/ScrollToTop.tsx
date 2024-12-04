@@ -1,36 +1,43 @@
-'use client'
-import { ArrowUp01Icon } from "hugeicons-react";
+"use client";
+import { ArrowUp } from 'lucide-react';
 import { useEffect, useState } from "react";
 
 export const ScrollToTop = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-    const toogleVisible = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+  const toogleVisible = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
     }
-    const handleScrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  };
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-    useEffect(() => {
-      window.addEventListener('scroll', toogleVisible)
-      return () => {
-        window.removeEventListener('scroll', toogleVisible)
-      }
-    }, [])
+  useEffect(() => {
+    window.addEventListener("scroll", toogleVisible);
+    return () => {
+      window.removeEventListener("scroll", toogleVisible);
+    };
+  }, []);
   return (
     <>
-    {
-      isVisible && (
-        <div onClick={() => handleScrollToTop()} className="cursor-pointer fixed bottom-4 right-52 md:bottom-4 md:right-8 text-neutral-900 outline outline-1 outline-neutral-300 hover:outline-neutral-400 p-3.5 md:p-5 rounded-full">
-          <ArrowUp01Icon className="size-4" />
-        </div>
-      )
-    }
+      {isVisible && (
+        <button
+          onClick={() => handleScrollToTop()}
+          className="fixed bottom-6 right-6 lg:bottom-12 lg:right-16 bg-background border border-text-primary group inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full"
+        >
+          <div className="translate-y-0 transition duration-200 group-hover:-translate-y-[300px]">
+            <ArrowUp size={20} />
+          </div>
+          <div className="absolute translate-y-[300px] transition duration-200 group-hover:translate-y-0">
+            <ArrowUp size={20} />
+          </div>
+        </button>
+      )}
     </>
-  )
+  );
 };
+

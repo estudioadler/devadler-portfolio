@@ -7,10 +7,6 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/ScrollToTop/ScrollToTop";
 import { Toaster } from "../components/ui/sonner";
-import { ThemeProvider } from "@/components/theme-provider"
-import Link from "next/link";
-import { ButtonCta } from "@/components/ButtonCta/ButtonCta";
-import { ArrowRight01Icon } from "hugeicons-react";
 import Template from "./template";
 
 const fontSans = FontSans({
@@ -74,7 +70,7 @@ export default function RootLayout({
     >
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased dark",
           fontSans.variable,
           neueMachina.variable
         )}
@@ -82,22 +78,8 @@ export default function RootLayout({
         <Template>
           <Header />
           <main>{children}</main>
-          <Toaster theme="dark" richColors />
+          <Toaster />
           <Footer />
-          <div className="fixed bottom-4 right-4 md:hidden">
-            <Link
-              href="https://api.whatsapp.com/send?phone=5531982688382"
-              target="blank"
-            >
-              <ButtonCta
-                iconLeft={<ArrowRight01Icon size={24} strokeWidth={1} />}
-                variant={"black"}
-                type={"button"}
-              >
-                Vamos conversar
-              </ButtonCta>
-            </Link>
-          </div>
           <ScrollToTop />
         </Template>
       </body>
