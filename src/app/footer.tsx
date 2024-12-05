@@ -35,10 +35,10 @@ export const Footer = () => {
             </h3>
             <nav className="flex flex-col space-y-3">
               <Link className="text-sm hover:underline" href="https://www.instagram.com/adler__gabriel/">Instagram</Link>
-              <Link className="text-sm hover:underline" href="https://dribbble.com/AdlerGabriel">Dribbble</Link>
+              <Link className="text-sm hover:underline" href="https://dribbble.com/estudioadler">Dribbble</Link>
               <Link className="text-sm hover:underline" href="https://www.linkedin.com/in/adlergabriel/">LinkedIn</Link>
-              <Link className="text-sm hover:underline" href="https://www.behance.net/adlergabriel">Behance</Link>
-              <Link className="text-sm hover:underline" href="https://github.com/AdlerGabriel">Github</Link>
+              <Link className="text-sm hover:underline" href="https://www.behance.net/estudioadler">Behance</Link>
+              <Link className="text-sm hover:underline" href="https://github.com/estudioadler">Github</Link>
               
             </nav>
           </div>
