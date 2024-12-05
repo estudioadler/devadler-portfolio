@@ -96,30 +96,35 @@ export const Header = () => {
                     <Link
                       className="text-sm hover:underline"
                       href="https://www.instagram.com/adler__gabriel/"
+                      target="_blank"
                     >
                       Instagram
                     </Link>
                     <Link
                       className="text-sm hover:underline"
                       href="https://dribbble.com/estudioadler"
+                      target="_blank"
                     >
                       Dribbble
                     </Link>
                     <Link
                       className="text-sm hover:underline"
                       href="https://www.linkedin.com/in/adlergabriel/"
+                      target="_blank"
                     >
                       LinkedIn
                     </Link>
                     <Link
                       className="text-sm hover:underline"
                       href="https://www.behance.net/estudioadler"
+                      target="_blank"
                     >
                       Behance
                     </Link>
                     <Link
                       className="text-sm hover:underline"
                       href="https://github.com/estudioadler"
+                      target="_blank"
                     >
                       Github
                     </Link>
