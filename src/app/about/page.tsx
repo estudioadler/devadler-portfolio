@@ -1,6 +1,11 @@
 import { Contact } from "@/components/Contact/Contact";
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Sobre - Adler Gabriel',
+  description: 'Saiba mais sobre mim.',
+}
+
 export default function AboutPage() {
   return (
     <>

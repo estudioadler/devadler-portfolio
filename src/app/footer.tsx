@@ -22,7 +22,7 @@ export const Footer = () => {
               Navegue
             </h3>
             <nav className="flex flex-col space-y-3">
-              <Link className="text-sm hover:underline" href="#">
+              <Link className="text-sm hover:underline" href="/">
                 Home
               </Link>
               <Link className="text-sm hover:underline" href="/about">
@@ -34,8 +34,8 @@ export const Footer = () => {
               <Link className="text-sm hover:underline" href="/skills">
                 Skills
               </Link>
-              <Link className="text-sm hover:underline" href="/contact">
-                Contato
+              <Link className="text-sm hover:underline" href="/certificates">
+                Certificados
               </Link>
             </nav>
           </div>

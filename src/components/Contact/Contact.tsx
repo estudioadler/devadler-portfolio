@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ButtonCta } from "../ButtonCta/ButtonCta";
+import { CircleAlert } from "lucide-react";
 
 export const contactFormSchema = z.object({
   name: z.string().min(2, {
@@ -32,12 +33,16 @@ export const Contact = () => {
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormValues, string>>>({});
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof ContactFormValues, string>>
+  >({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const validateForm = (): boolean => {
@@ -48,7 +53,7 @@ export const Contact = () => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Partial<Record<keyof ContactFormValues, string>> = {};
-        error.errors.forEach(err => {
+        error.errors.forEach((err) => {
           if (err.path.length > 0) {
             newErrors[err.path[0] as keyof ContactFormValues] = err.message;
           }
@@ -61,29 +66,31 @@ export const Contact = () => {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        toast.success("Mensagem enviada com sucesso! Em breve entrarei em contato.");
+        toast.success(
+          "Mensagem enviada com sucesso! Em breve entrarei em contato."
+        );
         setFormData({ name: "", email: "", message: "" });
       } else {
         toast.error("Erro ao enviar a mensagem. Tente novamente.");
       }
     } catch (error) {
-      console.error('Erro:', error);
+      console.error("Erro:", error);
       toast.error("Erro ao enviar a mensagem. Tente novamente.");
     } finally {
       setIsSubmitting(false);
@@ -109,9 +116,19 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className={`pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground ${errors.name ? 'border-red-500' : ''}`}
+                  className={`pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground ${
+                    errors.name ? "border-red-500" : ""
+                  }`}
                 />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                {errors.name && (
+                  <p className="text-sm mt-1 inline-flex">
+                    <CircleAlert
+                      size={14}
+                      className="mr-2 mt-0.5 text-red-500"
+                    />{" "}
+                    <span>{errors.name}</span>
+                  </p>
+                )}
               </div>
               <div>
                 <Input
@@ -121,9 +138,19 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className={`pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground ${errors.email ? 'border-red-500' : ''}`}
+                  className={`pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground ${
+                    errors.email ? "border-red-500" : ""
+                  }`}
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-sm mt-1 inline-flex">
+                    <CircleAlert
+                      size={14}
+                      className="mr-2 mt-0.5 text-red-500"
+                    />
+                    <span>{errors.email}</span>
+                  </p>
+                )}
               </div>
             </div>
             <div>
@@ -133,15 +160,22 @@ export const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`resize-none pl-4 bg-primary-foreground border-0 rounded-2xl min-h-[160px] text-primary placeholder:text-muted-foreground ${errors.message ? 'border-red-500' : ''}`}
+                className={`resize-none pl-4 bg-primary-foreground border-0 rounded-2xl min-h-[160px] text-primary placeholder:text-muted-foreground ${
+                  errors.message ? "border-red-500" : ""
+                }`}
               />
-              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+              {errors.message && (
+                <p className="text-sm mt-1 inline-flex">
+                  <CircleAlert size={14} className="mr-2 mt-0.5 text-red-500" />
+                  <span>{errors.message}</span>
+                </p>
+              )}
             </div>
             <p className="text-sm text-neutral-400 leading-relaxed">
-              Está procurando um desenvolvedor dedicado e criativo para somar
-              à sua equipe? Envie uma mensagem! Estou pronto para novos
-              desafios e animado para contribuir com projetos que fazem a
-              diferença. Vamos conversar!
+              Está procurando um desenvolvedor dedicado e criativo para somar à
+              sua equipe? Envie uma mensagem! Estou pronto para novos desafios e
+              animado para contribuir com projetos que fazem a diferença. Vamos
+              conversar!
             </p>
           </CardContent>
           <CardFooter className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -160,7 +194,7 @@ export const Contact = () => {
               size="default"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Enviando...' : 'Enviar'}
+              {isSubmitting ? "Enviando..." : "Enviar"}
             </ButtonCta>
           </CardFooter>
         </form>

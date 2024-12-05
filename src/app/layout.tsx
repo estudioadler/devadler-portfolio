@@ -51,8 +51,8 @@ const neueMachina = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Adler Gabriel - Front-end Developer & UI Designer",
-  description: "Desenvolvedor front-end e UI Designer",
+  title: "Adler Gabriel - Front-end Developer",
+  description: "Desenvolvedor front-end",
   icons: {
     icon: "/favicon.ico",
   },
@@ -76,8 +76,8 @@ export default function RootLayout({
           neueMachina.variable
         )}
       >
+        <Preloader />
         <Template>
-          <Preloader />
           <Header />
           <main>{children}</main>
           <Toaster />

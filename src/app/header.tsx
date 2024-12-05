@@ -20,7 +20,7 @@ export const Header = () => {
     { label: "Sobre mim", link: "/about" },
     { label: "Projetos", link: "/projects" },
     { label: "Skills", link: "/skills" },
-    { label: "Contato", link: "/contact" },
+    { label: "Certicados", link: "/certificates" },
   ];
 
   return (
