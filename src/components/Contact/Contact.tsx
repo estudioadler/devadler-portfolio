@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,10 +23,10 @@ import { ButtonCta } from "../ButtonCta/ButtonCta";
 
 export const contactFormSchema = z.object({
   name: z.string().min(2, {
-    message: "O name deve ter pelo menos 2 letras.",
+    message: "O nome deve ter pelo menos 2 letras.",
   }),
   email: z.string().email({
-    message: "Por favor, forneça um endereço de e-mail válido.",
+    message: "Por favor, forneça um endereço de e-mail válido.",
   }),
   message: z.string().min(10, {
     message: "A mensagem deve ter pelo menos 10 letras.",
@@ -48,15 +47,30 @@ export const Contact = () => {
     },
   });
 
-  function onSubmit(data: ContactFormValues) {
+  async function onSubmit(data: ContactFormValues) {
+    console.log(data);
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      console.log(data);
-      toast.success("Mensagem enviada com sucesso! Em breve entrarei em contato.");
+    try {
+      const response = await fetch('/api/route', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Mensagem enviada com sucesso! Em breve entrarei em contato.");
+        form.reset();
+      } else {
+        toast.error("Erro ao enviar a mensagem. Tente novamente.");
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      toast.error("Erro ao enviar a mensagem. Tente novamente.");
+    } finally {
       setIsSubmitting(false);
-      form.reset();
-    }, 2000);
+    }
   }
 
   return (
@@ -80,6 +94,7 @@ export const Contact = () => {
                       <FormControl>
                         <Input
                           placeholder="Nome"
+                          disabled={isSubmitting}
                           className="pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground"
                           {...field}
                         />
@@ -97,6 +112,7 @@ export const Contact = () => {
                         <Input
                           type="email"
                           placeholder="Email"
+                          disabled={isSubmitting}
                           className="pl-4 bg-primary-foreground border-0 rounded-2xl h-14 text-primary placeholder:text-muted-foreground"
                           {...field}
                         />
@@ -114,6 +130,7 @@ export const Contact = () => {
                     <FormControl>
                       <Textarea
                         placeholder="Mensagem"
+                        disabled={isSubmitting}
                         className="resize-none pl-4 bg-primary-foreground border-0 rounded-2xl min-h-[160px] text-primary placeholder:text-muted-foreground"
                         {...field}
                       />
@@ -133,7 +150,7 @@ export const Contact = () => {
               <div className="space-y-1">
                 <p className="text-sm text-neutral-400">Não curte formulários?</p>
                 <a
-                  href="mailto:hello@significa.co"
+                  href="mailto:devadler@gmail.com"
                   className="text-sm hover:underline"
                 >
                   devadler@gmail.com
@@ -143,8 +160,9 @@ export const Contact = () => {
                 type="submit"
                 variant={"default"}
                 size="default"
+                disabled={isSubmitting}
               >
-                Enviar
+                {isSubmitting ? 'Enviando...' : 'Enviar'}
               </ButtonCta>
             </CardFooter>
           </form>
