@@ -64,7 +64,7 @@ export const CardProject = (props: ICardProject) => {
           <Carousel
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="bg-background rounded-2xl">
               {props.imgUrl.map((src, index) => (
                 <CarouselItem key={index}>
                   <div className="relative aspect-video rounded-3xl">
@@ -72,7 +72,7 @@ export const CardProject = (props: ICardProject) => {
                       src={src}
                       alt={`Carousel image ${index + 1}`}
                       fill
-                      className="object-cover rounded-2xl cursor-pointer"
+                      className="object-cover cursor-pointer rounded-lg"
                       onClick={() => handleImageClick(src)}
                     />
                   </div>

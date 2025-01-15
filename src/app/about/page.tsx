@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="flex flex-col gap-6 max-w-2xl text-neutral-500">
           <p className="text-muted-foreground">
             Olá, sou o <span className="font-bold text-primary">Adler</span>, atualmente
-            cursando o 3º semestre de{" "}
+            cursando o 5º semestre de{" "}
             <span className="font-bold text-primary">Engenharia de Software</span> com foco
             no <span className="font-bold text-primary">Desenvolvimento Front-end</span>.
             Tenho me dedicado aos estudos e buscando aprimorar minhas{" "}
@@ -24,7 +24,7 @@ export default function AboutPage() {
             em uma variedade de ferramentas.
           </p>
           <p>
-            Além disso, trago uma bagagem de 6 anos como
+            Além disso, trago uma bagagem de 7 anos como
             <span className="font-bold text-primary"> Designer Gráfico Freelancer</span>.
             Durante esse período, pude criar uma ampla gama de materiais
             digitais e impressos, desenvolvendo uma visão criativa que

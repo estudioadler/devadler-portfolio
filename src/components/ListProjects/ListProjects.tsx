@@ -15,37 +15,16 @@ export const ListProjects = () => {
     {
       alt: "Analu Store",
       name: "Analu Store",
-      imgUrl: ["/analu.png"],
-      url: "https://github.com/estudioadler",
+      imgUrl: ["/analustore.png"],
+      url: "https://github.com/estudioadler/analu-store",
       description: "Loja de roupas e acessórios.",
       status: "Em desenvolvimento",
       techs: ["React", "Next.js", "Tailwind CSS"],
     },
     {
-      alt: "Speech Notes",
-      name: "Speech Notes",
-      imgUrl: ["/speechnotes.png"],
-      url: "https://github.com/estudioadler",
-      description: "Sistema de notas em áudio e textos.",
-      status: "Em desenvolvimento",
-      techs: ["React", "Node.js", "MongoDB"],
-    },
-    {
-      alt: "Colaborar Ead",
-      name: "Colaborar Ead",
-      imgUrl: ["/redesignColaborar.png"],
-      url: "https://github.com/estudioadler",
-      description: "Plataforma de Ensino a Distância.",
-      status: "Em desenvolvimento",
-      techs: ["Vue.js", "Express", "PostgreSQL"],
-    },
-    {
       alt: "Essencial Enfermagem",
       name: "Essencial Enfermagem",
-      imgUrl: [
-        "/essencial01.png",
-        "/essencial02.png",
-      ],
+      imgUrl: ["/essencial01.png"],
       url: "https://github.com/estudioadler/Essencial-Enfermagem---landing-page",
       description: "Landing page para empresa de cuidado ao idoso.",
       status: "Em desenvolvimento",
@@ -70,4 +49,3 @@ export const ListProjects = () => {
     </div>
   );
 };
-

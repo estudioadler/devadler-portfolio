@@ -24,7 +24,7 @@ const ButtonCta = React.forwardRef<HTMLButtonElement, ButtonCtaProps>(
           <div className="absolute -translate-x-4 opacity-0 transition group-hover:-translate-x-8 group-hover:opacity-100">
             <ArrowRight className="size-5" />
           </div>
-          <span className="pr-6 uppercase  leading-none">{children}</span>
+          <span className="pr-6 uppercase leading-none tracking-wide">{children}</span>
           <div className="absolute right-0 translate-x-0 opacity-100 transition group-hover:translate-x-4 group-hover:opacity-0">
             <Dot className="size-5" strokeWidth={3} />
           </div>
