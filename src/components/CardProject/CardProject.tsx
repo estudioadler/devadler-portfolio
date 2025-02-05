@@ -7,11 +7,6 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "../ui/carousel";
-import {
   AlertDialog,
   AlertDialogContent,
 } from "@/components/ui/alert-dialog";
@@ -24,11 +19,9 @@ interface ICardProject {
   imgUrl: string[];
   url: string;
   textButton: string;
-  techs: string[];
 }
 
 export const CardProject = (props: ICardProject) => {
-  const [current, setCurrent] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleImageClick = (src: string) => {
@@ -59,14 +52,10 @@ export const CardProject = (props: ICardProject) => {
           </ButtonCta>
         </Link>
       </div>
-      <Card className="w-full max-w-3xl mx-auto border-none order-1 md:order-2">
+      <Card className="w-full max-w-3xl mx-auto order-1 md:order-2">
         <CardContent className="p-0">
-          <Carousel
-            className="w-full"
-          >
-            <CarouselContent className="bg-background rounded-2xl">
               {props.imgUrl.map((src, index) => (
-                <CarouselItem key={index}>
+                <div key={index}>
                   <div className="relative aspect-video rounded-3xl">
                     <Image
                       src={src}
@@ -76,22 +65,8 @@ export const CardProject = (props: ICardProject) => {
                       onClick={() => handleImageClick(src)}
                     />
                   </div>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            <div className="absolute bottom-4 left-0 right-0">
-              <div className="flex justify-center gap-2">
-                {props.imgUrl.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`h-2 w-2 rounded-full ${
-                      current === index ? "bg-white" : "bg-white/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </Carousel>
         </CardContent>
       </Card>
 

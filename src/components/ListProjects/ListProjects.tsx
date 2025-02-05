@@ -7,7 +7,6 @@ interface IProject {
   url: string;
   description: string;
   status: string;
-  techs: string[];
 }
 
 export const ListProjects = () => {
@@ -19,7 +18,6 @@ export const ListProjects = () => {
       url: "https://github.com/estudioadler/analu-store",
       description: "Loja de roupas e acessórios.",
       status: "Em desenvolvimento",
-      techs: ["React", "Next.js", "Tailwind CSS"],
     },
     {
       alt: "Glicotrack",
@@ -28,8 +26,16 @@ export const ListProjects = () => {
       url: "https://github.com/estudioadler/glicotrack",
       description: "Aplicativo para controle de glicemia.",
       status: "Em desenvolvimento",
-      techs: ["HTML", "CSS", "JavaScript"],
     },
+    {
+      alt: "Speechnotes",
+      name: "Speechnotes",
+      imgUrl: ["/speechnotes.png"],
+      url: "https://github.com/estudioadler/speechnotes",
+      description: "Aplicativo de anotações de voz.",
+      status: "Em desenvolvimento",
+      
+    }
   ];
 
   return (
@@ -43,7 +49,6 @@ export const ListProjects = () => {
           imgUrl={project.imgUrl}
           url={project.url}
           textButton="Ver projeto"
-          techs={project.techs}
         />
       ))}
     </div>
