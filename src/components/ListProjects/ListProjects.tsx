@@ -34,7 +34,14 @@ export const ListProjects = () => {
       url: "https://github.com/estudioadler/speechnotes",
       description: "Aplicativo de anotações de voz.",
       status: "Em desenvolvimento",
-      
+    },
+    {
+      alt: "Aline Barcelos",
+      name: "Aline Barcelos",
+      imgUrl: ["/alinebarcelos.png"],
+      url: "https://github.com/estudioadler/Aline-Barcelos-Photographer-Portfolio",
+      description: "Portfólio de fotografia.",
+      status: "Em desenvolvimento",
     }
   ];
 
