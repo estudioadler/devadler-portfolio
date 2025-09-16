@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 DevAdler Portfolio
 
-## Getting Started
+![Preview](https://raw.githubusercontent.com/estudioadler/devadler-portfolio/main/public/preview.png)  
+*Meu portfólio desenvolvido em Next.js com foco em performance, acessibilidade e design moderno.*  
+*My portfolio built with Next.js focused on performance, accessibility, and modern design.*
 
-First, run the development server:
+---
+
+## 📌 Sobre o Projeto | About the Project
+🇧🇷 Este é o meu portfólio pessoal, onde apresento meus projetos, habilidades e formas de contato.  
+O objetivo principal é ter um espaço profissional online para mostrar meu trabalho como desenvolvedor front-end.  
+
+🇺🇸 This is my personal portfolio, where I showcase my projects, skills, and ways to get in touch.  
+The main goal is to have a professional online space to present my work as a front-end developer.  
+
+---
+
+## 🚀 Tecnologias Utilizadas | Technologies Used
+- **Next.js 14** — Framework React para produção | React framework for production
+- **React 18** — Biblioteca base | Base library
+- **TypeScript** — Tipagem estática | Static typing
+- **TailwindCSS + tailwind-merge + tailwindcss-animate** — Estilização rápida e consistente | Fast and consistent styling
+- **Radix UI & shadcn/ui** — Componentes acessíveis e personalizáveis | Accessible and customizable components
+- **Framer Motion** — Animações | Animations
+- **React Hook Form + Zod** — Formulários com validação | Forms with validation
+- **EmailJS & Nodemailer** — Envio de mensagens | Email sending
+- **Embla Carousel** — Carrosséis modernos | Modern carousels
+- **Lucide-react & HugeIcons** — Ícones | Icons
+- **Next Themes** — Suporte a tema claro/escuro | Dark/Light mode support
+- **Sonner** — Notificações toast | Toast notifications  
+
+---
+
+## 📦 Scripts Disponíveis | Available Scripts
 
 ```bash
+# 🇧🇷 Rodar em modo desenvolvimento | 🇺🇸 Run in development mode
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🇧🇷 Criar build para produção | 🇺🇸 Create production build
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 🇧🇷 Iniciar build em produção | 🇺🇸 Start production build
+npm start
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# 🇧🇷 Rodar linter | 🇺🇸 Run linter
+npm run lint
