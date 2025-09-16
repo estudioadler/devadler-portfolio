@@ -26,13 +26,6 @@
       {"name": "TypeScript", "icon": "../logoSkills/typescript.svg", "size": 24}
     ]
   },
-  "tests": {
-    "frameworks": [
-      {"name": "Cypress", "icon": "../logoSkills/Cypress.svg", "size": 24},
-      {"name": "Jest", "icon": "../logoSkills/jest.svg", "size": 24},
-      {"name": "Storybook", "icon": "../logoSkills/storybook.svg", "size": 24}
-    ]
-  },
   "design": {
     "tools": [
       {"name": "Photoshop", "icon": "../logoSkills/photoshop.svg", "size": 24},
@@ -41,11 +34,6 @@
       {"name": "Illustrator", "icon": "../logoSkills/illustrator.svg", "size": 24}
     ]
   },
-  "tools": [
-    {"name": "NPM", "icon": "../logoSkills/npm.svg", "size": 24},
-    {"name": "Yarn", "icon": "../logoSkills/yarn.svg", "size": 24},
-    {"name": "Webpack", "icon": "../logoSkills/webpack.svg", "size": 24}
-  ],
   "databases": [
     {"name": "MySQL", "icon": "../logoSkills/mysql.svg", "size": 24},
     {"name": "PostgreSQL", "icon": "../logoSkills/postgresql.svg", "size": 24},
